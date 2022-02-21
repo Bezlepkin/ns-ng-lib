@@ -1,0 +1,46 @@
+{
+  "projectType": "library",
+  "root": "libs/nativescript-list-box",
+  "sourceRoot": "libs/nativescript-list-box/src",
+  "prefix": "bezlepkin",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": [
+        "dist/libs/nativescript-list-box"
+      ],
+      "options": {
+        "project": "libs/nativescript-list-box/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/nativescript-list-box/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/nativescript-list-box/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/nativescript-list-box"
+      ],
+      "options": {
+        "jestConfig": "libs/nativescript-list-box/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/nativescript-list-box/src/**/*.ts",
+          "libs/nativescript-list-box/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
